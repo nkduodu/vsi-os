@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VSI Crypto Radar — Command Center</title>
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Holo‑Mode Environment -->
+  <link rel="stylesheet" href="holo.css" />
+
+  <!-- Intro Animation -->
+  <link rel="stylesheet" href="intro.css" />
+
+  <!-- Dark Reactor Theme -->
+  <link rel="stylesheet" href="themes.css" />
+
+  <!-- Mobile HUD -->
+  <link rel="stylesheet" href="mobile.css" />
+</head>
+
+<body class="theme-default">
+
+  <!-- ========================= -->
+  <!-- 1. CINEMATIC INTRO LAYER -->
+  <!-- ========================= -->
+  <div id="vsi-intro" class="vsi-intro">
+    <div class="intro-center">
+      <div class="intro-orb">
+        <span>VSI</span>
+      </div>
+      <div class="intro-text">SYSTEMS ONLINE</div>
+    </div>
+  </div>
+
+  <!-- ========================= -->
+  <!-- 2. HOLO‑MODE BACKGROUND -->
+  <!-- ========================= -->
+  <div class="holo-stars"></div>
+  <div class="holo-grid"></div>
+  <div class="holo-scanlines"></div>
+
+  <!-- ========================= -->
+  <!-- 3. AI ASSISTANT PANEL -->
+  <!-- ========================= -->
+  <aside id="ai-panel" class="ai-panel collapsed">
+    <div class="ai-header">
+      <span class="ai-title">VSI Assistant</span>
+      <button id="ai-toggle" class="ai-toggle">≡</button>
+    </div>
+    <div class="ai-content">
+      <div id="ai-insights">Loading insights…</div>
+    </div>
+  </aside>
+
+  <!-- ========================= -->
+  <!-- 4. MAIN APPLICATION SHELL -->
+  <!-- ========================= -->
+  <div id="app-shell" class="app-shell" style="display:none;">
+
+    <!-- HEADER -->
+    <header class="app-header glass">
+      <div class="brand">
+        <div class="vsi-logo-orb"><span>VSI</span></div>
+        <div class="brand-text">
+          <h1>VSI Crypto Radar</h1>
+          <p>Vital Services Inc. • Realtime Snapshot</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle">⚡</button>
+      </div>
+    </header>
+
+    <!-- MAIN GRID -->
+    <main class="app-main">
+
+      <!-- MARKET OVERVIEW -->
+      <section class="card glass">
+        <h2>Market Overview</h2>
+        <div id="overview" class="overview"></div>
+      </section>
+
+      <!-- SECTOR PULSE -->
+      <section class="card glass">
+        <h2>Sector Pulse (24h)</h2>
+        <div class="chart-area">
+          <canvas id="priceChart"></canvas>
+        </div>
+      </section>
+
+      <!-- CORE ASSETS -->
+      <section class="card glass">
+        <h2>Core Assets</h2>
+        <div id="core-tiles" class="tile-grid"></div>
+      </section>
+
+      <!-- MOMENTUM RADAR -->
+      <section class="card glass">
+        <h2>Momentum Radar</h2>
+        <div id="momentum-tiles" class="tile-grid"></div>
+      </section>
+
+      <!-- MEME RISK -->
+      <section class="card glass">
+        <h2>Meme Coin Risk Meter</h2>
+        <div id="meme-tiles" class="tile-grid"></div>
+      </section>
+
+      <!-- STATUS -->
+      <div id="error" class="status error" style="display:none;"></div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="vsi-footer glass">
+      © 2026 Vital Services Inc. — VSI Command Center
+    </footer>
+
+  </div>
+
+  <!-- ========================= -->
+  <!-- 5. SCRIPT ENGINE -->
+  <!-- ========================= -->
+  <script src="intro.js"></script>
+  <script src="ai-panel.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

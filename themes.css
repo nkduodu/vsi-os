@@ -1,0 +1,104 @@
+/* ============================================================
+   VSI DARK REACTOR MODE
+   Activated when <body class="theme-reactor">
+   ============================================================ */
+
+body.theme-reactor {
+  --vsi-bg: #000000;
+  --vsi-bg-soft: #0a0a0a;
+  --vsi-glass: rgba(0, 0, 0, 0.75);
+  --vsi-border: rgba(250, 204, 21, 0.35);
+  --vsi-accent: #facc15;
+  --vsi-text: #fefce8;
+  --vsi-muted: #a1a1aa;
+}
+
+/* ============================================================
+   REACTOR GLOW EFFECTS
+   ============================================================ */
+
+body.theme-reactor .glass {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(250, 204, 21, 0.35);
+  box-shadow: 0 0 40px rgba(250, 204, 21, 0.25);
+}
+
+body.theme-reactor .glass:hover {
+  border-color: rgba(250, 204, 21, 0.55);
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* ============================================================
+   HEADER + ORB
+   ============================================================ */
+
+body.theme-reactor .vsi-logo-orb {
+  background: radial-gradient(circle, #1a1a1a 0, #000 60%);
+  box-shadow: 0 0 40px rgba(250, 204, 21, 0.9);
+}
+
+body.theme-reactor .vsi-logo-orb span {
+  color: #facc15;
+}
+
+/* ============================================================
+   SIGNAL BADGES
+   ============================================================ */
+
+body.theme-reactor .signal-buy {
+  color: #facc15;
+  border-color: rgba(250, 204, 21, 0.5);
+}
+
+body.theme-reactor .signal-hold {
+  color: #fef08a;
+  border-color: rgba(254, 240, 138, 0.4);
+}
+
+body.theme-reactor .signal-drop {
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.4);
+}
+
+/* ============================================================
+   DIALS
+   ============================================================ */
+
+body.theme-reactor .dial {
+  background: radial-gradient(circle, #000 0, #1a1a1a 60%);
+  box-shadow: 0 0 22px rgba(250, 204, 21, 0.4);
+}
+
+body.theme-reactor .dial-ring {
+  border-color: rgba(250, 204, 21, 0.25);
+  border-top-color: #facc15;
+  border-right-color: rgba(250, 204, 21, 0.8);
+}
+
+body.theme-reactor .dial-center {
+  color: #facc15;
+}
+
+/* ============================================================
+   TEXT + LABELS
+   ============================================================ */
+
+body.theme-reactor h1,
+body.theme-reactor h2,
+body.theme-reactor .overview-label,
+body.theme-reactor .tile-symbol {
+  color: #fefce8;
+}
+
+body.theme-reactor .overview-value,
+body.theme-reactor .tile-price {
+  color: #facc15;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+body.theme-reactor .vsi-footer {
+  color: #a1a1aa;
+}

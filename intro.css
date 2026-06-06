@@ -1,0 +1,80 @@
+/* ============================================================
+   VSI INTRO SEQUENCE — CINEMATIC BOOT
+   ============================================================ */
+
+.vsi-intro {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: introFadeOut 3.2s forwards;
+}
+
+.intro-center {
+  text-align: center;
+  opacity: 0;
+  animation: introFadeIn 0.8s forwards 0.4s;
+}
+
+.intro-orb {
+  width: 110px;
+  height: 110px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #0b1b3a 0, #020617 60%);
+  box-shadow: 0 0 40px rgba(56, 248, 255, 0.9);
+  margin: 0 auto 18px;
+  position: relative;
+  overflow: hidden;
+  animation: orbIgnite 1.6s ease-out forwards;
+}
+
+.intro-orb span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  font-size: 1rem;
+  color: #38f8ff;
+  text-transform: uppercase;
+}
+
+.intro-text {
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  color: #38f8ff;
+  opacity: 0;
+  animation: textReveal 1s forwards 1.4s;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes introFadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes orbIgnite {
+  0% { transform: scale(0.6); opacity: 0; }
+  40% { transform: scale(1.15); opacity: 1; }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+@keyframes textReveal {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes introFadeOut {
+  0% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}

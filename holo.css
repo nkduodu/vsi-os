@@ -1,0 +1,98 @@
+/* ============================================================
+   VSI HOLO‑MODE ENVIRONMENT LAYER
+   Animated grid, parallax stars, scanlines, glow overlays
+   ============================================================ */
+
+/* Ensure environment sits behind all UI */
+.holo-stars,
+.holo-grid,
+.holo-scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ============================================================
+   PARALLAX STARFIELD
+   ============================================================ */
+
+.holo-stars {
+  background: transparent;
+  overflow: hidden;
+}
+
+.holo-stars::before,
+.holo-stars::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%);
+  width: 2px;
+  height: 2px;
+  border-radius: 999px;
+  animation: starFloat 18s linear infinite;
+  opacity: 0.4;
+}
+
+.holo-stars::after {
+  animation-duration: 26s;
+  opacity: 0.25;
+}
+
+@keyframes starFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2000px); }
+}
+
+/* ============================================================
+   HOLOGRAPHIC GRID
+   ============================================================ */
+
+.holo-grid {
+  background-image:
+    linear-gradient(rgba(56, 248, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 248, 255, 0.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridShift 22s linear infinite;
+  opacity: 0.25;
+}
+
+@keyframes gridShift {
+  from { background-position: 0 0; }
+  to { background-position: 0 2000px; }
+}
+
+/* ============================================================
+   HUD SCANLINES
+   ============================================================ */
+
+.holo-scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: scanMove 6s linear infinite;
+  opacity: 0.12;
+}
+
+@keyframes scanMove {
+  from { background-position: 0 0; }
+  to { background-position: 0 200px; }
+}
+
+/* ============================================================
+   OPTIONAL GLOW OVERLAY (subtle depth)
+   ============================================================ */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(56, 248, 255, 0.08), transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
